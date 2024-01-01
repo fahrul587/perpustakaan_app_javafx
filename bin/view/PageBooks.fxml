@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookController">
+   <center>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <children>
+            <AnchorPane fx:id="tb_buku" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <BorderPane layoutX="251.0" layoutY="109.0" prefHeight="473.0" prefWidth="702.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <TableView fx:id="table_buku" prefHeight="227.0" prefWidth="702.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="buku_col_idBuku" prefWidth="45.0" style="-fx-alignment: center;" text="id" />
+                              <TableColumn fx:id="buku_col_judul" prefWidth="114.0" style="-fx-alignment: center;" text="Judul" />
+                              <TableColumn fx:id="buku_col_kategori" prefWidth="96.0" style="-fx-alignment: center;" text="Kategori" />
+                              <TableColumn fx:id="buku_col_penulis" prefWidth="97.0" style="-fx-alignment: center;" text="Penulis" />
+                              <TableColumn fx:id="buku_col_penerbit" prefWidth="107.0" style="-fx-alignment: center;" text="Penerbit" />
+                              <TableColumn fx:id="buku_col_terbit" prefWidth="84.0" style="-fx-alignment: center;" text="Tahun Terbit" />
+                              <TableColumn fx:id="buku_col_sewa" prefWidth="84.0" style="-fx-alignment: center;" text="Harga Sewa" />
+                              <TableColumn fx:id="buku_col_stok" prefWidth="54.0" style="-fx-alignment: center;" text="Stok" />
+                              <TableColumn fx:id="buku_col_action" prefWidth="69.0" text="Action" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <top>
+                        <BorderPane prefHeight="43.0" prefWidth="702.0" BorderPane.alignment="CENTER">
+                           <left>
+                              <Button mnemonicParsing="false" onAction="#showFormTambahBuku" prefHeight="60.0" prefWidth="145.0" styleClass="button-tambah" stylesheets="@../style/Style.css" text="ADD BUKU" BorderPane.alignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#f8f8f8" glyphName="PLUS" />
+                                 </graphic>
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </left>
+                           <right>
+                              <HBox alignment="CENTER" prefHeight="8.0" prefWidth="271.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="search_book" onKeyTyped="#liveSearchBook" prefHeight="33.0" prefWidth="400.0" promptText="Judul, kategori, penulis, penerbit, etc" />
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </right>
+                        </BorderPane>
+                     </top>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane fx:id="tb_form_buku" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" visible="false">
+               <children>
+                  <GridPane maxWidth="1.7976931348623157E308" prefHeight="473.0" prefWidth="702.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="200.0" prefWidth="122.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="580.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="30.0" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="118.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="KATEGORI" GridPane.rowIndex="1" />
+                        <Label text="JUDUL" GridPane.rowIndex="2" />
+                        <Label text="ID" />
+                        <Label text="PENULIS" GridPane.rowIndex="3" />
+                        <Label text="PENERBIT" GridPane.rowIndex="4" />
+                        <Label text="TAHUN TERBIT" GridPane.rowIndex="5" />
+                        <Label text="STOK" GridPane.rowIndex="7" />
+                        <TextField fx:id="form_idBuku" disable="true" maxWidth="1.7976931348623157E308" prefHeight="69.0" prefWidth="580.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="form_judul" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="580.0" promptText="Judul buku" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="form_penulis" maxWidth="1.7976931348623157E308" prefHeight="82.0" prefWidth="580.0" promptText="Penulis buku" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="form_penerbit" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="580.0" promptText="Penerbit buku" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="form_tahun" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="580.0" promptText="Tahun terbitnya buku" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="form_stok" maxWidth="1.7976931348623157E308" prefHeight="92.0" prefWidth="580.0" promptText="Jumlah buku" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#resetForm" prefHeight="30.0" prefWidth="80.0" styleClass="button-reset" stylesheets="@../style/Style.css" text="RESET">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="30.0" prefWidth="80.0" styleClass="button-tambah" stylesheets="@../style/Style.css" text="SUBMIT">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <ComboBox fx:id="form_kategori" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="228.0" promptText="-- Pilih Kategori --">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <TextField fx:id="form_addKategori" prefHeight="30.0" prefWidth="207.0" promptText="Tambah Kategori">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button fx:id="btn_addKategori" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#tambahKategori" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: green;" textAlignment="CENTER" HBox.hgrow="NEVER">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" />
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Tambah Kategori" textAlignment="CENTER" />
+                                 </tooltip>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="HARGA SEWA" GridPane.rowIndex="6" />
+                        <TextField fx:id="form_sewa" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="580.0" promptText="Rp." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </StackPane>
+   </center>
+   <top>
+      <Pane prefHeight="87.0" prefWidth="742.0" styleClass="header-title" stylesheets="@../style/Style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="header_title" layoutX="20.0" layoutY="26.0" text="Tabel Buku" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+</BorderPane>

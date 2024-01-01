@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainContent" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <left>
+      <VBox fillWidth="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="282.0" styleClass="sidebar" stylesheets="@../style/Style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="118.0" prefWidth="262.0">
+               <children>
+                  <ImageView fitHeight="218.0" fitWidth="226.0" layoutX="30.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logo2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Button fx:id="btn_dashboard" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#switchDisplay" prefHeight="51.0" prefWidth="282.0" styleClass="sidebar-items" stylesheets="@../style/Style.css" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView glyphName="HOME" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="btn_buku" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#switchDisplay" prefHeight="51.0" prefWidth="282.0" styleClass="sidebar-items" stylesheets="@../style/Style.css" text="Tabel Buku">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOK" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="btn_anggota" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#switchDisplay" prefHeight="51.0" prefWidth="282.0" styleClass="sidebar-items" stylesheets="@../style/Style.css" text="Tabel Anggota">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView glyphName="USERS" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="btn_pinjam" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#switchDisplay" prefHeight="51.0" prefWidth="282.0" styleClass="sidebar-items" stylesheets="@../style/Style.css" text="Tabel Pinjam">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView glyphName="LIST" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="btn_kategori" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#switchDisplay" prefHeight="51.0" prefWidth="282.0" styleClass="sidebar-items" stylesheets="@../style/Style.css" text="Tabel Kategori">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOKMARK" size="20" />
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+   </left>
+</BorderPane>
