@@ -1,0 +1,16 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\javafx\\library\\fontawesomefx-commons-9.1.2.jar",
+        "d:\\javafx\\library\\fontawesomefx-fontawesome-4.7.0-9.1.2.jar",
+        "d:\\javafx\\library\\javafx.base.jar",
+        "d:\\javafx\\library\\javafx.controls.jar",
+        "d:\\javafx\\library\\javafx.fxml.jar",
+        "d:\\javafx\\library\\javafx.graphics.jar",
+        "d:\\javafx\\library\\javafx.media.jar",
+        "d:\\javafx\\library\\javafx.swing.jar",
+        "d:\\javafx\\library\\javafx.web.jar",
+        "d:\\javafx\\library\\javafx-swt.jar",
+        "d:\\javafx\\library\\mysql-connector-j-8.2.0.jar"
+    ]
+}
