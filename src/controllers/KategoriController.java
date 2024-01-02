@@ -73,7 +73,7 @@ public class KategoriController implements Initializable {
     public void tambahKategori() {
         Alert alert;
         if (CrudKategori.addKategori(form_nama_kategori.getText()) == 1) {
-            alert = new Alert(AlertType.CONFIRMATION);
+            alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Message");
             alert.setHeaderText(null);
             alert.setContentText("Kategori berhasil ditambah");
@@ -93,7 +93,7 @@ public class KategoriController implements Initializable {
         Alert alert;
         if (CrudKategori.updateKategori(Integer.parseInt(form_id_kategori.getText()),
                 form_nama_kategori.getText()) == 1) {
-            alert = new Alert(AlertType.CONFIRMATION);
+            alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Message");
             alert.setHeaderText(null);
             alert.setContentText("Kategori berhasil diubah");
@@ -151,7 +151,7 @@ public class KategoriController implements Initializable {
                             Optional<ButtonType> buttonType = alert.showAndWait();
                             if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
                                 if (CrudKategori.deleteKategori(kategori.getId()) == 1) {
-                                    alert = new Alert(AlertType.CONFIRMATION);
+                                    alert = new Alert(AlertType.INFORMATION);
                                     alert.setTitle("Information Message");
                                     alert.setHeaderText(null);
                                     alert.setContentText("Kategori berhasil dihapus");

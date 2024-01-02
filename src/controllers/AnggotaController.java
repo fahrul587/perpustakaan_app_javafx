@@ -204,7 +204,7 @@ public class AnggotaController implements Initializable {
 
                             if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {//jika konfirmasi OK
                                 if (CrudAnggota.deleteAnggota(anggota.getId()) == 1) {//jika delete anggota mengembalikan nilai bukan 0
-                                    alert = new Alert(AlertType.CONFIRMATION);
+                                    alert = new Alert(AlertType.INFORMATION);
                                     alert.setTitle("Information Message");
                                     alert.setHeaderText(null);
                                     alert.setContentText("Anggota berhasil dihapus");

@@ -424,7 +424,8 @@ public class PinjamController implements Initializable {
 
                         returnIcon.setOnMouseClicked((MouseEvent event) -> {
                             Alert alert;
-                            Pinjam pinjam = table_peminjaman.getSelectionModel().getSelectedItem();
+                            Pinjam pinjam = table_detail_buku.getSelectionModel().getSelectedItem();
+                            System.out.println(pinjam.getId());
                             alert = new Alert(AlertType.CONFIRMATION);
                             alert.setTitle("Confirm Message");
                             alert.setHeaderText(null);
@@ -433,7 +434,7 @@ public class PinjamController implements Initializable {
                             Optional<ButtonType> buttonType = alert.showAndWait();
                             if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
                                 if (CrudPinjam.deletePinjam(pinjam.getId()) == 1) {
-                                    alert = new Alert(AlertType.CONFIRMATION);
+                                    alert = new Alert(AlertType.INFORMATION);
                                     alert.setTitle("Information Message");
                                     alert.setHeaderText(null);
                                     alert.setContentText("Buku berhasil dikembalikan");
@@ -458,7 +459,6 @@ public class PinjamController implements Initializable {
             };
             return cell;
         };
-        System.out.println("ok");
         detail_col_action.setCellFactory(cellFoctory);
         table_detail_buku.setItems(listPinjam);
     }
@@ -510,7 +510,7 @@ public class PinjamController implements Initializable {
                             Optional<ButtonType> buttonType = alert.showAndWait();
                             if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
                                 if (CrudPinjam.deletePinjam(pinjam.getId()) == 1) {
-                                    alert = new Alert(AlertType.CONFIRMATION);
+                                    alert = new Alert(AlertType.INFORMATION);
                                     alert.setTitle("Information Message");
                                     alert.setHeaderText(null);
                                     alert.setContentText("Data berhasil dihapus");

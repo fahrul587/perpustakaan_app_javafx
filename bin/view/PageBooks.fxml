@@ -24,7 +24,7 @@
    <center>
       <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <children>
-            <AnchorPane fx:id="tb_buku" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0">
+            <AnchorPane fx:id="tb_buku" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" visible="false">
                <children>
                   <BorderPane layoutX="251.0" layoutY="109.0" prefHeight="473.0" prefWidth="702.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <center>
@@ -78,7 +78,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </AnchorPane>
-            <AnchorPane fx:id="tb_form_buku" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" visible="false">
+            <AnchorPane fx:id="tb_form_buku" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0">
                <children>
                   <GridPane maxWidth="1.7976931348623157E308" prefHeight="473.0" prefWidth="702.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columnConstraints>
@@ -103,25 +103,8 @@
                         <Label text="PENULIS" GridPane.rowIndex="3" />
                         <Label text="PENERBIT" GridPane.rowIndex="4" />
                         <Label text="TAHUN TERBIT" GridPane.rowIndex="5" />
+                        <Label text="HARGA SEWA" GridPane.rowIndex="6" />
                         <Label text="STOK" GridPane.rowIndex="7" />
-                        <TextField fx:id="form_idBuku" disable="true" maxWidth="1.7976931348623157E308" prefHeight="69.0" prefWidth="580.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="form_judul" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="580.0" promptText="Judul buku" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="form_penulis" maxWidth="1.7976931348623157E308" prefHeight="82.0" prefWidth="580.0" promptText="Penulis buku" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="form_penerbit" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="580.0" promptText="Penerbit buku" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="form_tahun" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="580.0" promptText="Tahun terbitnya buku" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField fx:id="form_stok" maxWidth="1.7976931348623157E308" prefHeight="92.0" prefWidth="580.0" promptText="Jumlah buku" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                           <children>
-                              <Button mnemonicParsing="false" onAction="#resetForm" prefHeight="30.0" prefWidth="80.0" styleClass="button-reset" stylesheets="@../style/Style.css" text="RESET">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font></Button>
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="30.0" prefWidth="80.0" styleClass="button-tambah" stylesheets="@../style/Style.css" text="SUBMIT">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font></Button>
-                           </children>
-                        </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
                               <ComboBox fx:id="form_kategori" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="228.0" promptText="-- Pilih Kategori --">
@@ -147,8 +130,25 @@
                               </Button>
                            </children>
                         </HBox>
-                        <Label text="HARGA SEWA" GridPane.rowIndex="6" />
+                        <TextField fx:id="form_idBuku" disable="true" maxWidth="1.7976931348623157E308" prefHeight="69.0" prefWidth="580.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="form_judul" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="580.0" promptText="Judul buku" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="form_penulis" maxWidth="1.7976931348623157E308" prefHeight="82.0" prefWidth="580.0" promptText="Penulis buku" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="form_penerbit" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="580.0" promptText="Penerbit buku" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="form_tahun" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="580.0" promptText="Tahun terbitnya buku" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <TextField fx:id="form_sewa" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="580.0" promptText="Rp." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="form_stok" maxWidth="1.7976931348623157E308" prefHeight="92.0" prefWidth="580.0" promptText="Jumlah buku" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#resetForm" prefHeight="30.0" prefWidth="80.0" styleClass="button-reset" stylesheets="@../style/Style.css" text="RESET">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="30.0" prefWidth="80.0" styleClass="button-tambah" stylesheets="@../style/Style.css" text="SUBMIT">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

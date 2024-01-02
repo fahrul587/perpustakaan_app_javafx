@@ -100,7 +100,7 @@ public class BookController implements Initializable {
             return;
         } else {
             if (CrudKategori.addKategori(form_addKategori.getText()) == 1) {
-                alert = new Alert(AlertType.CONFIRMATION);
+                alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Information Message");
                 alert.setHeaderText(null);
                 alert.setContentText("Kategori berhasil disimpan");
@@ -109,7 +109,7 @@ public class BookController implements Initializable {
                 alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error Message");
                 alert.setHeaderText(null);
-                alert.setContentText("Buku gagal disimpan");
+                alert.setContentText("kategori sudah terdaftar");
                 alert.showAndWait();
             }
             loadKategori();
@@ -165,7 +165,7 @@ public class BookController implements Initializable {
 
                             if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
                                 if (CrudBuku.deleteBuku(buku.getId()) == 1) {
-                                    alert = new Alert(AlertType.CONFIRMATION);
+                                    alert = new Alert(AlertType.INFORMATION);
                                     alert.setTitle("Information Message");
                                     alert.setHeaderText(null);
                                     alert.setContentText("Buku berhasil dihapus");
