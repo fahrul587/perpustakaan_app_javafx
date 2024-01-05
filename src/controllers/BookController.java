@@ -232,13 +232,11 @@ public class BookController implements Initializable {
 
     public void loadKategori() {
         ObservableList<Kategori> listKategori = CrudKategori.getKategori();
-        String[] coba = new String[listKategori.size()];
-        int i = 0;
-        for (Kategori kategori : listKategori) {
-            coba[i] = kategori.getJoin();
-            i++;
+        String[] newKategori = new String[listKategori.size()];
+        for (int i = 0; i < listKategori.size(); i++) {
+            newKategori[i] = listKategori.get(i).getJoin();
         }
-        ObservableList<String> items = FXCollections.observableArrayList(coba);
+        ObservableList<String> items = FXCollections.observableArrayList(newKategori);
         form_kategori.setItems(items);
     }
 
@@ -264,8 +262,7 @@ public class BookController implements Initializable {
             form_tahun.setText("");
             form_stok.setText("");
             form_sewa.setText("");
-        } else
-            setFormUpdate();
+        } else setFormUpdate();
     }
 
     public boolean formBukuValidation() {

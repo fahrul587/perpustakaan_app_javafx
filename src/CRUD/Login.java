@@ -29,7 +29,7 @@ public class Login {
             return result.next();
             // Mengembalikan nilai true jika hasil query mengandung baris data (admin ditemukan), false jika tidak.
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error : koneksi gagal");
             // Menangkap dan mencetak stack trace jika terjadi kesalahan.
         }
         return status;

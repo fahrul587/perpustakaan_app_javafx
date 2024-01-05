@@ -143,7 +143,6 @@ public class CrudPinjam {
     public static int deletePinjam(int id_pinjam) {
         // Mendeklarasikan metode yang bertanggung jawab untuk menghapus data peminjaman dari database.
         String query = "DELETE FROM peminjaman WHERE id_pinjam = " + id_pinjam;
-        System.out.println(id_pinjam);
         // Membuat query SQL untuk menghapus data peminjaman berdasarkan id_pinjam.
         conn = Koneksi.connectDb();
         // Mendapatkan koneksi ke database menggunakan kelas Koneksi.

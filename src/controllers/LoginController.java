@@ -1,7 +1,7 @@
 package controllers;
 // Package controllers: Package yang berisi kelas-kelas yang mengendalikan logika antarmuka pengguna (UI) aplikasi.
 
-import java.io.IOException; // Import kelas IOException untuk menangani pengecualian input/output.
+import java.io.*; // Import kelas IOException untuk menangani pengecualian input/output.
 
 import CRUD.Login; // Import kelas Login dari paket CRUD untuk proses otentikasi login.
 import javafx.event.ActionEvent; // Import kelas ActionEvent untuk menangani peristiwa pengguna.
@@ -49,38 +49,35 @@ public class LoginController {
             alert.setHeaderText(null);
             alert.setContentText("Tolong isi semua kolom");
             alert.showAndWait();
+            return;
+        }
+        //untuk memproses login
+        boolean status = Login.getLogin(username.getText(), password.getText());
+        if (status) {
+            alert = new Alert(AlertType.INFORMATION); // Notifikasi berhasil jika login sukses.
+            alert.setTitle("Information Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Successfully Login");
+            alert.showAndWait();
+            // Menutup jendela login dan membuka tampilan baru.
+            try {
+                btnLogin.getScene().getWindow().hide(); // Menutup tampilan login.
+                root = FXMLLoader.load(getClass().getResource("/view/Index.fxml")); // Memuat tampilan baru.
+                stage = new Stage(); // Membuat stage baru.
+                scene = new Scene(root); // Membuat scene baru yang berisi tampilan baru.
+                stage.getIcons().add(new Image("/img/logo.png")); // Menambahkan ikon pada aplikasi.
+                stage.setMinHeight(640); // Menetapkan tinggi minimum aplikasi.
+                stage.setMinWidth(1044); // Menetapkan lebar minimum aplikasi.
+                stage.setTitle("The Booktown app"); // Menetapkan judul aplikasi.
+                stage.setScene(scene); // Menetapkan tampilan pada stage.
+                stage.show(); // Menampilkan aplikasi baru.
+            } catch (Exception e) {}
         } else {
-            // Memeriksa keberhasilan login.
-            boolean status = Login.getLogin(username.getText(), password.getText());
-            if (status) {
-                alert = new Alert(AlertType.INFORMATION); // Notifikasi berhasil jika login sukses.
-                alert.setTitle("Information Message");
-                alert.setHeaderText(null);
-                alert.setContentText("Successfully Login");
-                alert.showAndWait();
-
-                // Menutup jendela login dan membuka tampilan baru.
-                try {
-                    btnLogin.getScene().getWindow().hide(); // Menutup tampilan login.
-                    root = FXMLLoader.load(getClass().getResource("/view/Index.fxml")); // Memuat tampilan baru.
-                    stage = new Stage(); // Membuat stage baru.
-                    scene = new Scene(root); // Membuat scene baru yang berisi tampilan baru.
-                    stage.getIcons().add(new Image("/img/logo.png")); // Menambahkan ikon pada aplikasi.
-                    stage.setMinHeight(640); // Menetapkan tinggi minimum aplikasi.
-                    stage.setMinWidth(1044); // Menetapkan lebar minimum aplikasi.
-                    stage.setTitle("The Booktown app"); // Menetapkan judul aplikasi.
-                    stage.setScene(scene); // Menetapkan tampilan pada stage.
-                    stage.show(); // Menampilkan aplikasi baru.
-                } catch (Exception e) {
-                    // TODO: handle exception
-                }
-            } else {
-                alert = new Alert(AlertType.ERROR); // Notifikasi error jika login gagal.
-                alert.setTitle("Error Message");
-                alert.setHeaderText(null);
-                alert.setContentText("Username / Password Salah!");
-                alert.showAndWait();
-            }
+            alert = new Alert(AlertType.ERROR); // Notifikasi error jika login gagal.
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Username / Password Salah!");
+            alert.showAndWait();
         }
     }
 }

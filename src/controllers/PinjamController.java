@@ -425,7 +425,6 @@ public class PinjamController implements Initializable {
                         returnIcon.setOnMouseClicked((MouseEvent event) -> {
                             Alert alert;
                             Pinjam pinjam = table_detail_buku.getSelectionModel().getSelectedItem();
-                            System.out.println(pinjam.getId());
                             alert = new Alert(AlertType.CONFIRMATION);
                             alert.setTitle("Confirm Message");
                             alert.setHeaderText(null);

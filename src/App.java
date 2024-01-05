@@ -1,8 +1,8 @@
-import javafx.application.Application; // Mengimpor kelas Application dari paket javafx
-import javafx.fxml.FXMLLoader; // Mengimpor kelas FXMLLoader dari paket javafx.fxml
-import javafx.scene.*; // Mengimpor kelas Scene dari paket javafx.scene
-import javafx.scene.image.Image; // Mengimpor kelas Image dari paket javafx.scene.image
-import javafx.stage.Stage; // Mengimpor kelas Stage dari paket javafx.stage
+import javafx.application.Application;//kelas javafx Ini menyediakan metode start() yang harus diimplementasikan oleh pengguna untuk memulai aplikasi.
+import javafx.fxml.FXMLLoader;//Kelas ini digunakan untuk memuat file FXML dan mengembalikan root node dari hierarki objek yang dibuat.
+import javafx.scene.*;// Kelas ini mewakili kontainer untuk semua konten UI dalam aplikasi JavaFX. Ini mengandung semua node UI.
+import javafx.scene.image.Image;//Kelas ini digunakan untuk memuat gambar.
+import javafx.stage.Stage;//Kelas ini mewakili jendela aplikasi JavaFX. Ini mengandung semua scene dan node UI.
 
 public class App extends Application {
     @Override
